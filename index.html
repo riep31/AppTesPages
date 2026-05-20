@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0"/>
+
+<title>Responsive Checker Pro</title>
+
+<link rel="stylesheet" href="style.css"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="logo">
+    Responsive Checker PRO
+  </div>
+
+  <div class="controls">
+
+    <input
+      type="text"
+      id="urlInput"
+      placeholder="https://example.com"
+    />
+
+    <button onclick="loadAllFrames()">
+      Open
+    </button>
+
+    <button onclick="captureScreen()">
+      Screenshot
+    </button>
+
+  </div>
+
+</header>
+
+<div class="toolbar">
+
+  <button onclick="setPreset('iphone')">
+    iPhone
+  </button>
+
+  <button onclick="setPreset('android')">
+    Android
+  </button>
+
+  <button onclick="setPreset('tablet')">
+    Tablet
+  </button>
+
+  <button onclick="setPreset('desktop')">
+    Desktop
+  </button>
+
+</div>
+
+<div class="devices-grid">
+
+  <!-- iPhone -->
+  <div class="device-card">
+
+    <div class="device-header">
+
+      <span>
+        iPhone 14 Pro
+      </span>
+
+      <div class="device-actions">
+
+        <button onclick="rotate('iphone')">
+          Rotate
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="device-info"
+    id="iphoneInfo">
+      390 × 844
+    </div>
+
+    <div class="resize-box">
+
+      <label>Width</label>
+
+      <input
+        type="range"
+        min="320"
+        max="900"
+        value="390"
+        onchange="resizeDevice('iphone',this.value)"
+      />
+
+    </div>
+
+    <iframe
+      id="iphone"
+      width="390"
+      height="844">
+    </iframe>
+
+  </div>
+
+  <!-- Android -->
+  <div class="device-card">
+
+    <div class="device-header">
+
+      <span>
+        Android
+      </span>
+
+      <button onclick="rotate('android')">
+        Rotate
+      </button>
+
+    </div>
+
+    <div class="device-info"
+    id="androidInfo">
+      412 × 915
+    </div>
+
+    <div class="resize-box">
+
+      <label>Width</label>
+
+      <input
+        type="range"
+        min="320"
+        max="900"
+        value="412"
+        onchange="resizeDevice('android',this.value)"
+      />
+
+    </div>
+
+    <iframe
+      id="android"
+      width="412"
+      height="915">
+    </iframe>
+
+  </div>
+
+  <!-- Tablet -->
+  <div class="device-card">
+
+    <div class="device-header">
+
+      <span>
+        Tablet
+      </span>
+
+      <button onclick="rotate('tablet')">
+        Rotate
+      </button>
+
+    </div>
+
+    <div class="device-info"
+    id="tabletInfo">
+      768 × 1024
+    </div>
+
+    <div class="resize-box">
+
+      <label>Width</label>
+
+      <input
+        type="range"
+        min="500"
+        max="1200"
+        value="768"
+        onchange="resizeDevice('tablet',this.value)"
+      />
+
+    </div>
+
+    <iframe
+      id="tablet"
+      width="768"
+      height="1024">
+    </iframe>
+
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
